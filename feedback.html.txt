@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Feedback Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            Feed<span>Back</span> Management
+        </div>
+
+        <div class="nav-buttons">
+
+            <button onclick="showPage('home')">Home</button>
+
+            <button onclick="showPage('register')">
+                Register
+            </button>
+
+            <button onclick="showPage('userLogin')">
+                Login
+            </button>
+
+            <button onclick="showPage('feedback')">
+                Give Feedback
+            </button>
+
+            <button onclick="showPage('reviews')">
+                View Feedback
+            </button>
+
+            <button onclick="showPage('adminLogin')">
+                Admin
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HOME -->
+    <div id="homePage">
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <h1>
+                    Feedback
+                    <span>Management System</span>
+                </h1>
+
+                <p>
+                    A feedback management system enables businesses to
+                    collect, analyze, and act on customer feedback for
+                    their products or services. Users can submit reviews,
+                    ratings, or suggestions through surveys or forms.
+                    Administrators can categorize and analyze feedback,
+                    generate insights, and implement improvements.
+                    This system enhances customer satisfaction and drives
+                    business growth.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button
+                        class="register-btn"
+                        onclick="showPage('register')">
+                        Register Now
+                    </button>
+
+                    <button
+                        class="login-btn"
+                        onclick="showPage('userLogin')">
+                        User Login
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURES -->
+        <section class="section">
+
+            <div class="title">
+
+                <h2>System Features</h2>
+
+                <p>
+                    Everything required to manage customer feedback
+                </p>
+
+            </div>
+
+
+            <div class="features">
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        👤
+                    </div>
+
+                    <h3>User Registration</h3>
+
+                    <p>
+                        Users can create an account by providing
+                        their name, email and password.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        📝
+                    </div>
+
+                    <h3>Feedback Collection</h3>
+
+                    <p>
+                        Users can submit reviews, ratings and
+                        suggestions through an easy feedback form.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ⭐
+                    </div>
+
+                    <h3>Rating System</h3>
+
+                    <p>
+                        Customers can rate products and services
+                        from 1 star to 5 stars.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        📊
+                    </div>
+
+                    <h3>Feedback Analysis</h3>
+
+                    <p>
+                        Administrators can analyze ratings,
+                        categories and customer responses.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        💡
+                    </div>
+
+                    <h3>Generate Insights</h3>
+
+                    <p>
+                        Feedback can be converted into useful
+                        insights for future improvements.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        📈
+                    </div>
+
+                    <h3>Business Growth</h3>
+
+                    <p>
+                        Understanding customer needs improves
+                        customer satisfaction and business growth.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATISTICS -->
+        <section class="section stats">
+
+            <div class="stat">
+                <h2 id="homeUsers">0</h2>
+                <p>Registered Users</p>
+            </div>
+
+            <div class="stat">
+                <h2 id="homeFeedback">0</h2>
+                <p>Total Feedback</p>
+            </div>
+
+            <div class="stat">
+                <h2 id="homeRating">0</h2>
+                <p>Average Rating</p>
+            </div>
+
+            <div class="stat">
+                <h2 id="homeSuggestions">0</h2>
+                <p>Suggestions</p>
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- REGISTER -->
+    <div id="registerPage" class="hidden">
+
+        <section class="auth-page">
+
+            <div class="auth-box">
+
+                <h2>Create Account</h2>
+
+                <p>
+                    Register to submit your valuable feedback
+                </p>
+
+                <form id="registerForm">
+
+                    <div class="input">
+
+                        <label>Full Name</label>
+
+                        <input
+                            type="text"
+                            id="registerName"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+
+                    <div class="input">
+
+                        <label>Email</label>
+
+                        <input
+                            type="email"
+                            id="registerEmail"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+
+                    <div class="input">
+
+                        <label>Phone Number</label>
+
+                        <input
+                            type="tel"
+                            id="registerPhone"
+                            placeholder="Enter phone number"
+                            required>
+
+                    </div>
+
+
+                    <div class="input">
+
+                        <label>Password</label>
+
+                        <input
+                            type="password"
+                            id="registerPassword"
+                            placeholder="Create password"
+                            required>
+
+                    </div>
+
+
+                    <div class="input">
+
+                        <label>Confirm Password</label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm password"
+                            required>
+
+                    </div>
+
+
+                    <button class="auth-btn" type="submit">
+                        Register
+                    </button>
+
+                </form>
+
+
+                <div class="switch">
+
+                    Already have an account?
+
+                    <span onclick="showPage('userLogin')">
+                        Login
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- USER LOGIN -->
+    <div id="userLoginPage" class="hidden">
+
+        <section class="auth-page">
+
+            <div class="auth-box">
+
+                <h2>User Login</h2>
+
+                <p>Login to submit your feedback</p>
+
+                <form id="userLoginForm">
+
+                    <div class="input">
+
+                        <label>Email</label>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="Enter registered email"
+                            required>
+
+                    </div>
+
+
+                    <div class="input">
+
+                        <label>Password</label>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Enter password"
+                            required>
+
+                    </div>
+
+
+                    <button class="auth-btn" type="submit">
+                        Login
+                    </button>
+
+                </form>
+
+
+                <div class="switch">
+
+                    Don't have an account?
+
+                    <span onclick="showPage('register')">
+                        Register
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- FEEDBACK -->
+    <div id="feedbackPage" class="hidden">
+
+        <section class="form-page">
+
+            <div class="form-box">
+
+                <h2>Submit Your Feedback</h2>
+
+                <p class="sub">
+                    Your feedback helps us improve our products
+                    and services.
+                </p>
+
+
+                <form id="feedbackForm">
+
+                    <div class="input">
+
+                        <label>Name</label>
+
+                        <input
+                            type="text"
+                            id="feedbackName"
+                            required>
+
+                    </div>
+
+
+                    <div class="input">
+
+                        <label>Email</label>
+
+                        <input
+                            type="email"
+                            id="feedbackEmail"
+                            required>
+
+                    </div>
+
+
+                    <div class="input">
+
+                        <label>Feedback Category</label>
+
+                        <select id="feedbackCategory" required>
+
+                            <option value="">
+                                Select Category
+                            </option>
+
+                            <option value="Product">
+                                Product
+                            </option>
+
+                            <option value="Service">
+                                Service
+                            </option>
+
+                            <option value="Website">
+                                Website
+                            </option>
+
+                            <option value="Customer Support">
+                                Customer Support
+                            </option>
+
+                            <option value="Suggestion">
+                                Suggestion
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="input">
+
+                        <label>Rating</label>
+
+                        <div class="stars">
+
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+
+                        </div>
+
+                        <input
+                            type="hidden"
+                            id="feedbackRating"
+                            value="0">
+
+                    </div>
+
+
+                    <div class="input">
+
+                        <label>Your Feedback</label>
+
+                        <textarea
+                            id="feedbackMessage"
+                            placeholder="Write your review, suggestion or complaint..."
+                            required></textarea>
+
+                    </div>
+
+
+                    <button
+                        class="form-submit"
+                        type="submit">
+                        Submit Feedback
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- REVIEWS -->
+    <div id="reviewsPage" class="hidden">
+
+        <section class="section">
+
+            <div class="title">
+
+                <h2>Customer Feedback</h2>
+
+                <p>
+                    Feedback submitted by our customers
+                </p>
+
+            </div>
+
+
+            <div class="stats">
+
+                <div class="stat">
+                    <h2 id="reviewTotal">0</h2>
+                    <p>Total People Gave Feedback</p>
+                </div>
+
+                <div class="stat">
+                    <h2 id="reviewAverage">0</h2>
+                    <p>Average Rating</p>
+                </div>
+
+                <div class="stat">
+                    <h2 id="reviewPositive">0</h2>
+                    <p>Positive Feedback</p>
+                </div>
+
+                <div class="stat">
+                    <h2 id="reviewSuggestions">0</h2>
+                    <p>Suggestions</p>
+                </div>
+
+            </div>
+
+
+            <br><br>
+
+            <div id="reviewContainer" class="review-grid"></div>
+
+        </section>
+
+    </div>
+
+
+    <!-- ADMIN LOGIN -->
+    <div id="adminLoginPage" class="hidden">
+
+        <section class="auth-page">
+
+            <div class="auth-box">
+
+                <h2>Admin Login</h2>
+
+                <p>
+                    Login to manage customer feedback
+                </p>
+
+
+                <form id="adminLoginForm">
+
+                    <div class="input">
+
+                        <label>Admin Username</label>
+
+                        <input
+                            type="text"
+                            id="adminUsername"
+                            placeholder="Enter admin username"
+                            required>
+
+                    </div>
+
+
+                    <div class="input">
+
+                        <label>Admin Password</label>
+
+                        <input
+                            type="password"
+                            id="adminPassword"
+                            placeholder="Enter admin password"
+                            required>
+
+                    </div>
+
+
+                    <button
+                        class="auth-btn"
+                        type="submit">
+                        Login as Admin
+                    </button>
+
+                </form>
+
+
+                <div class="admin-demo">
+
+                    <b>Demo Admin Account</b>
+
+                    <br><br>
+
+                    Username:
+                    <b>admin</b>
+
+                    <br>
+
+                    Password:
+                    <b>admin123</b>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- ADMIN DASHBOARD -->
+    <div id="adminPage" class="hidden">
+
+        <section class="admin-page">
+
+            <div class="admin-top">
+
+                <div>
+
+                    <h1>Admin Dashboard</h1>
+
+                    <p>
+                        Manage and analyze customer feedback
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="logout"
+                    onclick="adminLogout()">
+                    Logout
+                </button>
+
+            </div>
+
+
+            <div class="dashboard">
+
+                <div class="dashboard-card">
+                    <h4>Total Users</h4>
+                    <h2 id="adminUsers">0</h2>
+                </div>
+
+                <div class="dashboard-card">
+                    <h4>Total Feedback</h4>
+                    <h2 id="adminFeedback">0</h2>
+                </div>
+
+                <div class="dashboard-card">
+                    <h4>Average Rating</h4>
+                    <h2 id="adminAverage">0</h2>
+                </div>
+
+                <div class="dashboard-card">
+                    <h4>Suggestions</h4>
+                    <h2 id="adminSuggestions">0</h2>
+                </div>
+
+            </div>
+
+
+            <!-- FEEDBACK TABLE -->
+            <div class="panel">
+
+                <h2>All Customer Feedback</h2>
+
+
+                <div class="tools">
+
+                    <input
+                        type="text"
+                        id="search"
+                        placeholder="Search feedback..."
+                        onkeyup="displayAdminFeedback()">
+
+
+                    <select
+                        id="filter"
+                        onchange="displayAdminFeedback()">
+
+                        <option value="All">
+                            All Categories
+                        </option>
+
+                        <option value="Product">
+                            Product
+                        </option>
+
+                        <option value="Service">
+                            Service
+                        </option>
+
+                        <option value="Website">
+                            Website
+                        </option>
+
+                        <option value="Customer Support">
+                            Customer Support
+                        </option>
+
+                        <option value="Suggestion">
+                            Suggestion
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Category</th>
+                                <th>Rating</th>
+                                <th>Feedback</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="feedbackTable"></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- ANALYTICS -->
+            <div class="analytics">
+
+                <div class="analytics-box">
+
+                    <h2>Rating Analysis</h2>
+
+                    <div id="ratingAnalytics"></div>
+
+                </div>
+
+
+                <div class="analytics-box">
+
+                    <h2>Category Analysis</h2>
+
+                    <div id="categoryAnalytics"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-grid">
+
+            <div>
+
+                <h3>Feedback Management System</h3>
+
+                <p>
+                    A feedback management system enables
+                    businesses to collect, analyze, and act
+                    on customer feedback for their products
+                    or services.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Main Features</h3>
+
+                <p>User Registration</p>
+                <p>Feedback Collection</p>
+                <p>Rating System</p>
+                <p>Feedback Analysis</p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Benefits</h3>
+
+                <p>Customer Satisfaction</p>
+                <p>Generate Insights</p>
+                <p>Business Growth</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="bottom">
+
+            © 2026 Feedback Management System |
+            Front-End Project
+
+        </div>
+
+    </footer>
+
+
+    <!-- NOTIFICATION -->
+    <div
+        id="notification"
+        class="notification">
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>s
